@@ -1,6 +1,6 @@
 let text = document.getElementById("text");
 
-const saywelcome = (msg) => {
+const convertTextToSpeech = (msg) => {
   const sp = new SpeechSynthesisUtterance(msg);
 
   [sp.voice] = speechSynthesis.getVoices();
@@ -8,7 +8,7 @@ const saywelcome = (msg) => {
   speechSynthesis.speak(sp);
 };
 document.getElementById("say").onclick = () => {
-  saywelcome(document.getElementById("text").value);
+  convertTextToSpeech(text.value);
 };
 let keyboardRows = [
   [
